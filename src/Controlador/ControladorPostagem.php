@@ -4,7 +4,7 @@ namespace Blog\Controlador;
 
 use Zeus\Annotations\Route;
 
-class ControladorPostagem
+class ControladorPostagem extends \Blog\Singleton
 {
 
     /** @Route("postagem/carregarTeste") */
@@ -40,6 +40,13 @@ class ControladorPostagem
         $c3->setAutor($eva)->setPostagem($p2)->setTexto($comentario)->save();
 
         echo 'Postagens de teste carregados';
+    }
+
+    public function listar($quantidade = 10, $aPartirDe = 0)
+    {
+        return \Blog\Modelo\Postagem::select('p')
+                        ->setFirstResult($aPartirDe)->setMaxResults($quantidade)
+                        ->getQuery()->getResult();
     }
 
 }

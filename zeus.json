@@ -9,7 +9,7 @@
     },
     "routes": {
         "initialDirectory": "src/",
-        "index": "module/action"
+        "index": "postagem/listar"
     },
     "development": true,
     "cache": "xcache"

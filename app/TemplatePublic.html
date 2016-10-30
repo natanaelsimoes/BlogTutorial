@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mercúrio - Sistema Gerenciador de Eventos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base id="urlBase" href="{{ __BASE__ }}">
+        <link rel="stylesheet" type="text/css" href="./vendor/sheillendra/metro-bootstrap/css/metro-bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="./vendor/sheillendra/metro-bootstrap/docs/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="./vendor/summernote/summernote/dist/summernote.css">
+        <script src="./vendor/sheillendra/metro-bootstrap/docs/jquery-1.8.0.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <img src="./src/assets/images/ifro-horizontal.png" class="img-responsive">
+                    <h2 class="text-center">Mercúrio</h2>
+                    <h4 class="text-center">Sistema Gerenciador de Eventos</h4>
+                </div>
+            </div>
+            {% if not user is empty %}
+            <div class="row">
+                <h4 class="text-center">
+                    <a href="#" class="label label-info"><?= $_User->getName() ?></a> <a href="<?= $_BaseURL ?>user/logout/" class="label label-danger"><i class="glyphicon glyphicon-eject"></i> Sair</a>
+                </h4>
+            </div>
+            {% endif %}
+            <div class="row">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <script src="./components/mycookie.js"></script>
+        <script src="./components/i18next.js"></script>
+        <script src="./components/i18next.config.js"></script>
+        <script src="./vendor/sheillendra/metro-bootstrap/docs/bootstrap.min.js"></script>
+        <script src="./vendor/sheillendra/metro-bootstrap/docs/application.js"></script>
+        <script src="./components/polyfiller.js"></script>
+        <script src="./vendor/summernote/summernote/dist/summernote.min.js"></script>
+    </body>
+</html>
