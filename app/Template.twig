@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Blog Tutorial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base id="urlBase" href="{{ __BASE__ }}">
+        <link rel="stylesheet" type="text/css" href="./vendor/components/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./vendor/summernote/summernote/dist/summernote.css">
+        <link rel="stylesheet" type="text/css" href="./app/css/blog.css">
+        <script type="text/javascript" src="./vendor/components/jquery/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="blog-masthead">
+            <div class="container">
+                <nav class="blog-nav">
+                    <a class="blog-nav-item active" href="./">Página inicial</a>
+                    <a class="blog-nav-item" href="./sobre">Sobre</a>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="blog-title">Blog Tutorial</h1>
+                <p class="lead blog-description">Usando ferramentas de alta produtividade para criar um blog em PHP.</p>
+            </div>
+            <div class="row">
+                {% block conteudo %}
+                {% endblock %}
+            </div>
+        </div>
+        <footer class="blog-footer">
+            <p>Template de blog para <a href="http://getbootstrap.com">Bootstrap</a> feito por <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            <p>
+                <a href="#">Voltar para o topo</a>
+            </p>
+        </footer>
+        <script type="text/javascript" src="./vendor/components/bootstrap/js/bootstrap.min.js"></script>
+        <script src="./vendor/summernote/summernote/dist/summernote.min.js"></script>
+    </body>
+</html>

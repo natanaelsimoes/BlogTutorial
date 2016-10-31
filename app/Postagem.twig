@@ -1,0 +1,40 @@
+{% extends "Template.twig" %}
+{% block conteudo %}
+    <div class="col-sm-8 blog-main">
+        <div class="blog-post">
+            <h2 class="blog-post-title">{{ postagem.titulo }}</h2>
+            <p class="blog-post-meta">{{ postagem.data }} por {{ postagem.autor.nome }}</p>
+            {{ postagem.texto|raw }}
+            <a href="./postagem/editar/{{ postagem.id }}" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-edit"></i> Editar</a>
+            <a href="./postagem/excluir/{{ postagem.id }}" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-erase"></i> Excluir</a>
+        </div>
+        {% if not postagem.comentarios.empty %}
+            <h3>Comentários</h3>
+            {% for comentario in postagem.comentarios %}
+                <div class="blog-comment">
+                    <p><strong>{{ comentario.autor.nome }}</strong>: <a href="./postagem/comentario/excluir/{{ comentario.id }}">Excluir</a></p>
+                    {{ comentario.texto|raw }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h3>Adicionar comentário</h3>
+        <form action="./postagem/{{ postagem.id }}/comentario/adicionar" method="post">
+            <div class="form-group">
+                <label for="autor">Autor</label>
+                <select name="autor" id="autor" class="form-control" required>
+                    <option>Selecione um autor</option>
+                    {% for autor in usuarios %}
+                        <option value="{{ autor.id }}">{{ autor.nome }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <textarea name="texto" id="texto" class="form-control" required></textarea>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+    <script>
+        $(function () {
+            $('#texto').summernote({height: 100});
+        })
+    </script>
+{% endblock %}
