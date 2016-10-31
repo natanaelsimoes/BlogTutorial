@@ -8,7 +8,7 @@
     "postagem\/listar\/$quantidade\/$aPartirDe": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagens",
     "postagem\/$id": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagem",
     "sobre": "Blog\\Visualizacao\\VisualizacaoPostagem::verSobre",
-    "postagem\/novo": "Blog\\Visualizacao\\VisualizacaoPostagem::novaPostagem",
+    "postagem\/adicionar": "Blog\\Visualizacao\\VisualizacaoPostagem::adicionar",
     "postagem\/editar\/$id": "Blog\\Visualizacao\\VisualizacaoPostagem::editar",
     "index": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagens",
     "routes\/update": "Zeus\\Routes::updateRoutes"
