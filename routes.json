@@ -1,0 +1,15 @@
+{
+    "postagem\/carregarTeste": "Blog\\Controlador\\ControladorPostagem::carregarTeste",
+    "postagem\/salvar": "Blog\\Controlador\\ControladorPostagem::salvar",
+    "postagem\/excluir\/$id": "Blog\\Controlador\\ControladorPostagem::excluir",
+    "postagem\/$id\/comentario\/adicionar": "Blog\\Controlador\\ControladorPostagem::adicionarComentario",
+    "postagem\/comentario\/excluir\/$id": "Blog\\Controlador\\ControladorPostagem::excluirComentario",
+    "postagem\/listar": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagens",
+    "postagem\/listar\/$quantidade\/$aPartirDe": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagens",
+    "postagem\/$id": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagem",
+    "sobre": "Blog\\Visualizacao\\VisualizacaoPostagem::verSobre",
+    "postagem\/novo": "Blog\\Visualizacao\\VisualizacaoPostagem::novaPostagem",
+    "postagem\/editar\/$id": "Blog\\Visualizacao\\VisualizacaoPostagem::editar",
+    "index": "Blog\\Visualizacao\\VisualizacaoPostagem::verPostagens",
+    "routes\/update": "Zeus\\Routes::updateRoutes"
+}

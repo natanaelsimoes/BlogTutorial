@@ -3,7 +3,7 @@
         "doctrine/orm": "v2.5.4",
         "components/jquery": "3.1.1",
         "components/bootstrap": "3.3.7",
-        "natanaelsimoes/zeus-framework": "0.1.2",
+        "natanaelsimoes/zeus-framework": "dev-master",
         "twig/twig": "v1.27.0",
         "summernote/summernote": "v0.8.2",
         "badcow/lorem-ipsum": "v1.1.1"

@@ -2,16 +2,16 @@
 
 namespace Blog\Visualizacao;
 
-class Twig extends \Blog\Singleton
+class Twig extends \Zeus\Singleton
 {
 
     private $twig;
     private $base;
 
-    private function __construct()
+    protected function __construct()
     {
         $protocol = (isset($_SERVER['REQUEST_SCHEME'])) ? $_SERVER['REQUEST_SCHEME'] : 'http';
-        $loader = new \Twig_Loader_Filesystem('./src/Views');
+        $loader = new \Twig_Loader_Filesystem('./app');
         $this->twig = new \Twig_Environment($loader);
         $uriInfo = explode('/', $_SERVER['PHP_SELF']);
         $rootScript = end($uriInfo);

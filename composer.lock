@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1a85cef167ab64b2115b4dfa09a883b2",
-    "content-hash": "3b36b8a7d8e67568f10f17f131f1bfe1",
+    "hash": "cc5ff876f09beaf3ccee47b6837a0a19",
+    "content-hash": "f63dbedcabc9af638aaa0b21dceadf40",
     "packages": [
         {
             "name": "badcow/lorem-ipsum",
@@ -759,16 +759,16 @@
         },
         {
             "name": "natanaelsimoes/zeus-framework",
-            "version": "0.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/natanaelsimoes/zeus-framework.git",
-                "reference": "f5b96b227f656a91cbb5e6afaec64d5305f158d0"
+                "reference": "e1629735969a6eab4455bb06bd55916311fa499e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/natanaelsimoes/zeus-framework/zipball/f5b96b227f656a91cbb5e6afaec64d5305f158d0",
-                "reference": "f5b96b227f656a91cbb5e6afaec64d5305f158d0",
+                "url": "https://api.github.com/repos/natanaelsimoes/zeus-framework/zipball/e1629735969a6eab4455bb06bd55916311fa499e",
+                "reference": "e1629735969a6eab4455bb06bd55916311fa499e",
                 "shasum": ""
             },
             "require": {
@@ -804,7 +804,7 @@
                 "framework",
                 "php"
             ],
-            "time": "2016-09-10 19:59:18"
+            "time": "2016-10-30 22:01:25"
         },
         {
             "name": "psr/log",
@@ -1267,7 +1267,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "natanaelsimoes/zeus-framework": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

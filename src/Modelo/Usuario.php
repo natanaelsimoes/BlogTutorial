@@ -93,18 +93,4 @@ class Usuario extends \Zeus\Entity
         return $this;
     }
 
-    public function logar()
-    {
-        try {
-            session_start();
-        } finally {
-            $_SESSION['blog_usuario'] = $this;
-        }
-    }
-
-    public function deslogar()
-    {
-        session_destroy();
-    }
-
 }
