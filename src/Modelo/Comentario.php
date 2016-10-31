@@ -12,7 +12,7 @@ class Comentario extends \Zeus\Entity
     /** @Id @GeneratedValue @Column(type="integer") */
     private $id;
 
-    /** @ManyToOne(targetEntity="Blog\Modelo\Postagem", inversedBy="comentarios", cascade={"all"}) */
+    /** @ManyToOne(targetEntity="Blog\Modelo\Postagem", inversedBy="comentarios") */
     private $postagem;
 
     /** @ManyToOne(targetEntity="Blog\Modelo\Usuario", inversedBy="comentarios") */

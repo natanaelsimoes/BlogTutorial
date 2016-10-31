@@ -43,7 +43,7 @@ class Postagem extends \Zeus\Entity
 
     public function getData()
     {
-        return $this->data;
+        return $this->data->format('d/m/Y');
     }
 
     public function getAutor()
