@@ -4,7 +4,7 @@ namespace Blog\Controlador;
 
 use Zeus\Annotations\Route;
 
-class ControladorPostagem
+class ControladorPostagem extends \Zeus\Singleton
 {
 
     /** @Route("postagem/carregarTeste") */
@@ -49,6 +49,66 @@ class ControladorPostagem
 
 
         echo 'Postagens de teste carregados';
+    }
+
+    public function listar($quantidade = 10, $aPartirDe = 0)
+    {
+        return \Blog\Modelo\Postagem::select('p')
+                        ->setFirstResult($aPartirDe)->setMaxResults($quantidade)
+                        ->orderBy('p.id', 'DESC')
+                        ->getQuery()->getResult();
+    }
+
+    public function postagemUnica($id)
+    {
+        return \Blog\Modelo\Postagem::find($id);
+    }
+
+    /** @Route("postagem/salvar") */
+    public static function salvar()
+    {
+        $id = filter_input(INPUT_POST, 'id');
+        $autorId = filter_input(INPUT_POST, 'autor');
+        $resumo = filter_input(INPUT_POST, 'resumo');
+        $texto = filter_input(INPUT_POST, 'texto');
+        $titulo = filter_input(INPUT_POST, 'titulo');
+        if (empty($id)) {
+            $postagem = new \Blog\Modelo\Postagem();
+        } else {
+            $postagem = \Blog\Modelo\Postagem::find($id);
+        }
+        $autor = \Blog\Modelo\Usuario::find($autorId);
+        $postagem
+                ->setAutor($autor)->setResumo($resumo)->setTexto($texto)
+                ->setTitulo($titulo)->save();
+        header('location: listar');
+    }
+
+    /** @Route("postagem/excluir/$id") */
+    public static function excluir($id)
+    {
+        $postagem = \Blog\Modelo\Postagem::find($id);
+        $postagem->delete();
+        header('location: ../listar');
+    }
+    
+    /** @Route("postagem/$id/comentario/adicionar") */
+    public static function adicionarComentario($id)
+    {
+        $postagem = \Blog\Modelo\Postagem::find($id);
+        $autor = \Blog\Modelo\Usuario::find(filter_input(INPUT_POST, 'autor'));
+        $comentario = new \Blog\Modelo\Comentario();
+        $comentario->setAutor($autor)->setTexto(filter_input(INPUT_POST, 'texto'));
+        $postagem->adicionarComentario($comentario)->save();
+        header('location: ' . $_SERVER['HTTP_REFERER']);
+    }
+
+    /** @Route("postagem/comentario/excluir/$id") */
+    public static function excluirComentario($id)
+    {
+        $comentario = \Blog\Modelo\Comentario::find($id);
+        $comentario->delete();
+        header('location: ' . $_SERVER['HTTP_REFERER']);
     }
 
 }
